@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Pessoa {
     private String nome;
-    private Date dataNasc;
+    private String dataNasc;
     private String email;
     private String telefone;
     
@@ -21,7 +21,7 @@ public class Pessoa {
         this.nome = nome;
     }
     
-    public void setDate(Date dataNasc){
+    public void setDate(String dataNasc){
         this.dataNasc = dataNasc;
     }
     
@@ -37,7 +37,7 @@ public class Pessoa {
         return this.nome;
     }
     
-    public Date getDate(){
+    public String getDate(){
         return this.dataNasc;
     }
     
