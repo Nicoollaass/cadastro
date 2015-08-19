@@ -16,8 +16,7 @@ public class Interface {
         Scanner entrada = new Scanner(System.in);
         
         System.out.println("Digite seu nome:");
-        pessoa.setNome(entrada.nextLine());
-        
+        pessoa.setNome(entrada.nextLine());        
         System.out.println("Digite sua data de Nascimento:");
         pessoa.setDate(entrada.nextLine());
         System.out.println("Digite E-mail:");
