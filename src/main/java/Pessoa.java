@@ -50,7 +50,7 @@ public class Pessoa {
     }
     
     public void save(){
-
+        // Aqui será a função cujo o objetivo é inserção no banco
     }
     
 }
