@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author nicolas.ssantos
  */
-public class Pessoa {
+public class Pessoa extends SqlServer {
     private String nome;
     private String dataNasc;
     private String email;
