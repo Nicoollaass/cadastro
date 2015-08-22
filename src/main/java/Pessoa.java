@@ -1,5 +1,9 @@
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +15,7 @@ import java.util.Date;
  *
  * @author nicolas.ssantos
  */
-public class Pessoa extends SqlServer {
+    public class Pessoa extends SqlServer {
     private String nome;
     private String dataNasc;
     private String email;
@@ -49,8 +53,33 @@ public class Pessoa extends SqlServer {
         return this.telefone;
     }
     
-    public void save(){
-        // Aqui será a função cujo o objetivo é inserção no banco
+    @SuppressWarnings("empty-statement")
+    public List buscarPessoas(){   
+        List pessoa =  new ArrayList();
+        try {
+            this.connect();
+            ResultSet consulta  = this.executar("SELECT * FROM pessoa");          
+            while(consulta.next()){
+                List dados =  new ArrayList();
+                dados.add(consulta.getString("id_pessoa"));
+                dados.add(consulta.getString("nome"));
+                dados.add(consulta.getString("data"));
+                dados.add(consulta.getString("email"));
+                dados.add(consulta.getString("telefone"));
+                pessoa.add(dados);                
+            };            
+           
+        } catch (Exception e) {
+            System.out.println("Houve algum problema ao buscar pessoas");
+        }
+        finally {  
+            this.disconnect();
+        }
+        /*for(Iterator iter = pessoa.iterator(); iter.hasNext();) {
+            System.out.println(iter.next()); 
+        }*/
+        return pessoa;
+        
     }
     
 }

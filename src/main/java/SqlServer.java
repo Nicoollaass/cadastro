@@ -7,9 +7,9 @@ import java.sql.Statement;
 
 public class SqlServer {
 
-	private String host = "localhost";
-	private String user = "sa";
-	private String pass = "123456";
+	private String host = "127.0.0.1";
+	private String user = "root";
+	private String pass = "";
 	private String database = "pessoa" ;
         private Connection c;
     
@@ -26,14 +26,14 @@ public class SqlServer {
         boolean isConnected = false;
         
         String url;
-        String portNumber = "1433";
+        String portNumber = "3306";
         String userName   = this.user;
         String passName   = this.pass;
-        url = "jdbc:sqlserver://"+ this.host+":" +portNumber + ";databaseName=" +this.database;
+        url = "jdbc:mysql://"+ host+"/"+database;
         
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
-            this.c = DriverManager.getConnection(url,userName, passName);
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            this.c = DriverManager.getConnection(url,this.user,this.pass);
             isConnected = true;
         } catch( SQLException e ) {
             e.printStackTrace();

@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template fi|le, choose Tools | Templates
  * and open the template in the editor.
  */
 /**
@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Interface {
     public static void main(String[] args) {
         Pessoa pessoa = new Pessoa();
-        Scanner entrada = new Scanner(System.in);
+        /*Scanner entrada = new Scanner(System.in);
         
         System.out.println("Digite seu nome:");
         pessoa.setNome(entrada.nextLine());        
@@ -22,7 +22,8 @@ public class Interface {
         System.out.println("Digite E-mail:");
         pessoa.setEmail(entrada.nextLine());
         System.out.println("Digite Telefone:");
-        pessoa.setTelefone(entrada.nextLine());
+        pessoa.setTelefone(entrada.nextLine());*/
+        pessoa.buscarPessoas();
         
     }
 }
