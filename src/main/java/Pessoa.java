@@ -15,71 +15,52 @@ import java.util.List;
  *
  * @author nicolas.ssantos
  */
-    public class Pessoa extends SqlServer {
+public class Pessoa extends SqlServer {
+    private int id = 0;
     private String nome;
     private String dataNasc;
     private String email;
     private String telefone;
     
-    public void setNome(String nome){
-        this.nome = nome;
+    public int getId(){
+        return this.id;
     }
     
-    public void setDate(String dataNasc){
-        this.dataNasc = dataNasc;
-    }
-    
-    public void setEmail(String email){
-        this.email = email;
-    }
-    
-    public void setTelefone(String telefone){
-        this.telefone = telefone;
+    public void setId(int id){
+        this.id = id;
     }
     
     public String getNome(){
         return this.nome;
     }
     
+    public void setNome(String nome){
+        this.nome = nome;
+    }
     public String getDate(){
         return this.dataNasc;
+    }    
+    
+    public void setDate(String dataNasc){
+        this.dataNasc = dataNasc;
     }
     
     public String getEmail(){
         return this.email;
     }
     
+    public void setEmail(String email){
+        this.email = email;
+    }
+    
     public String getTelefone(){
         return this.telefone;
     }
     
-    @SuppressWarnings("empty-statement")
-    public List buscarPessoas(){   
-        List pessoa =  new ArrayList();
-        try {
-            this.connect();
-            ResultSet consulta  = this.executar("SELECT * FROM pessoa");          
-            while(consulta.next()){
-                List dados =  new ArrayList();
-                dados.add(consulta.getString("id_pessoa"));
-                dados.add(consulta.getString("nome"));
-                dados.add(consulta.getString("data"));
-                dados.add(consulta.getString("email"));
-                dados.add(consulta.getString("telefone"));
-                pessoa.add(dados);                
-            };            
-           
-        } catch (Exception e) {
-            System.out.println("Houve algum problema ao buscar pessoas");
-        }
-        finally {  
-            this.disconnect();
-        }
-        /*for(Iterator iter = pessoa.iterator(); iter.hasNext();) {
-            System.out.println(iter.next()); 
-        }*/
-        return pessoa;
-        
-    }
+    public void setTelefone(String telefone){
+        this.telefone = telefone;
+    }    
+    
+    
     
 }

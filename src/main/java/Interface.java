@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Interface {
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa();
+        CrudPessoa pessoa = new CrudPessoa();
         /*Scanner entrada = new Scanner(System.in);
         
         System.out.println("Digite seu nome:");
@@ -23,7 +23,29 @@ public class Interface {
         pessoa.setEmail(entrada.nextLine());
         System.out.println("Digite Telefone:");
         pessoa.setTelefone(entrada.nextLine());*/
-        pessoa.buscarPessoas();
+        
+        
+        //metodo que salva pessoa
+        /*pessoa.setNome("Nicolas silva dos santos");
+        pessoa.setEmail("email@email.com");
+        pessoa.setDate("05/11/1995");
+        pessoa.setTelefone("56227332");
+        System.out.println(pessoa.salvar());
+        */
+        
+        //metodo que edita pessoa
+        /*pessoa.setId(1);
+        pessoa.setNome("Nicola");
+        pessoa.setEmail("email@teste.com");
+        pessoa.setDate("05/11/1995");
+        pessoa.setTelefone("56227332");
+        System.out.println(pessoa.editar());*/
+        
+        
+        //metodo para buscar e listar pessoas cadastradas
+        //pessoa.listarPessoas(pessoa.buscarPessoas());
+        
+        
         
     }
 }
