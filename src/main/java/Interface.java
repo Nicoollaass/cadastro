@@ -41,6 +41,8 @@ public class Interface {
         pessoa.setTelefone("56227332");
         System.out.println(pessoa.editar());*/
         
+        //metodo que exclui pessoa
+        //pessoa.excluir(1);
         
         //metodo para buscar e listar pessoas cadastradas
         //pessoa.listarPessoas(pessoa.buscarPessoas());

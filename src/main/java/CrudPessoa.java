@@ -29,8 +29,7 @@ public class CrudPessoa extends Pessoa{
                 dadosPessoa.setEmail(consulta.getString("email"));
                 dadosPessoa.setTelefone(consulta.getString("telefone"));
                 pessoa.add(dadosPessoa);                
-            };   
-           
+            };              
         } catch (Exception e) {
             System.out.println(e);
             System.out.println("Houve algum problema ao buscar pessoas");
@@ -62,7 +61,7 @@ public class CrudPessoa extends Pessoa{
                                     + "VALUES('"+this.getNome()+"','"+this.getDate()+"','"+this.getEmail()+"','"+this.getTelefone()+"')");
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println("Houve algum problema ao buscar pessoas");
+            System.out.println("Houve algum problema ao salvar pessoa");
         }
         finally {  
             this.disconnect();
@@ -81,14 +80,27 @@ public class CrudPessoa extends Pessoa{
                                   + "email='"+this.getEmail()+"',"
                                   + "telefone='"+this.getTelefone()+"'"
                                   + "WHERE id_pessoa="+this.getId());
-
         } catch (Exception e) {
             System.out.println(e);
-            System.out.println("Houve algum problema ao buscar pessoas");
+            System.out.println("Houve algum problema ao editar pessoas");
         }
         finally {  
             this.disconnect();
         } 
         return editar;
+    }
+    
+    public int excluir(int id){
+        int excluir = -1;
+        try {
+            this.connect();
+            excluir  = this.inserir("DELETE FROM pessoa WHERE id_pessoa="+id);
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("Houve algum problema ao excluir pessoas");        }
+        finally {  
+            this.disconnect();
+        } 
+        return excluir;
     }
 }
